@@ -1,0 +1,4 @@
+CREATE LOGIN jaya   
+    WITH PASSWORD = '123';
+
+CREATE USER jaya FOR LOGIN jaya;

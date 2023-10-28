@@ -26,5 +26,21 @@ namespace Resturent_Management_System
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (mainclass.isValid(textBox1.Text, textBox2.Text)==false)
+            {
+                MessageBox.Show("Please Check Your User Name And Password", "Invalid Details");
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox1.Focus();
+            }
+            else {
+                this.Hide();
+                frmMain frm1 = new frmMain();
+                frm1.Show();
+            }
+        }
     }
 }
