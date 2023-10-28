@@ -12,9 +12,45 @@ namespace Resturent_Management_System
 {
     public partial class frmMain : Form
     {
+        
+
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        public void Addcontrols(Form f) {
+            panelc.Controls.Clear();
+            f.Dock = DockStyle.Fill;
+            f.TopLevel = false;
+            panelc.Controls.Add(f);
+            f.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+      
+
+        private void btnhome_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmHone());
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            label2.Text = mainclass.USER;
         }
     }
 }

@@ -32,9 +32,18 @@ namespace Resturent_Management_System
             if (user == "admin" && pass == "123")
             {
                 isvalid = true;
+                USER = "Mahima"; // Read DB User Name here
             }
             return isvalid;
 
         }
+        public static string user;
+
+        public static string USER {
+            private set { user = "Hello, "+ value; }
+            get { return user; }
+            
+                
+       }
     }
 }
