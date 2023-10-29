@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resturent_Management_System.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,6 +52,11 @@ namespace Resturent_Management_System
         private void frmMain_Load(object sender, EventArgs e)
         {
             label2.Text = mainclass.USER;
+        }
+
+        private void btncatagories_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmcategoryview());
         }
     }
 }

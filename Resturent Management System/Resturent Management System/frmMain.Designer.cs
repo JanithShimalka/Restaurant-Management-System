@@ -174,6 +174,7 @@
             this.btncatagories.TabIndex = 5;
             this.btncatagories.Text = "Categories";
             this.btncatagories.UseVisualStyleBackColor = false;
+            this.btncatagories.Click += new System.EventHandler(this.btncatagories_Click);
             // 
             // btnhome
             // 
