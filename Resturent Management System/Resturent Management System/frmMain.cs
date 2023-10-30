@@ -63,5 +63,15 @@ namespace Resturent_Management_System
         {
             Addcontrols(new frmTable());
         }
+
+        private void btnstaff_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmStaffView());
+        }
+
+        private void btnproduct_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmProductView());
+        }
     }
 }

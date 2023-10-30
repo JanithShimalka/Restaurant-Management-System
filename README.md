@@ -12,3 +12,11 @@
 <img src = "Screenshots/tablelist.PNG">
 <h1>Add New Table Page</h1>
 <img src = "Screenshots/addtable.PNG">
+<h1>Staff Page</h1>
+<img src = "Screenshots/staff.PNG">
+<h1>Add New Item to Staff Page</h1>
+<img src = "Screenshots/staffadd.PNG">
+<h1>Product Page</h1>
+<img src = "Screenshots/product.PNG">
+<h1>Add New Item to Product Page</h1>
+<img src = "Screenshots/productadd.PNG">

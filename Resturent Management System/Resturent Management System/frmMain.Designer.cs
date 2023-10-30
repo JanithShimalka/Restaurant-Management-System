@@ -129,6 +129,7 @@
             this.btnstaff.TabIndex = 8;
             this.btnstaff.Text = "Staff";
             this.btnstaff.UseVisualStyleBackColor = false;
+            this.btnstaff.Click += new System.EventHandler(this.btnstaff_Click);
             // 
             // btntables
             // 
@@ -160,6 +161,7 @@
             this.btnproduct.TabIndex = 6;
             this.btnproduct.Text = "Products";
             this.btnproduct.UseVisualStyleBackColor = false;
+            this.btnproduct.Click += new System.EventHandler(this.btnproduct_Click);
             // 
             // btncatagories
             // 
