@@ -58,5 +58,10 @@ namespace Resturent_Management_System
         {
             Addcontrols(new frmcategoryview());
         }
+
+        private void btntables_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmTable());
+        }
     }
 }

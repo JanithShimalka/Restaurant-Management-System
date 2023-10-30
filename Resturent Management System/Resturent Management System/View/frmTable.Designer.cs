@@ -1,6 +1,6 @@
 ﻿namespace Resturent_Management_System.View
 {
-    partial class frmcategoryview
+    partial class frmTable
     {
         /// <summary>
         /// Required designer variable.
@@ -34,15 +34,14 @@
             this.dgvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvedit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvdel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.btnadd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(117, 24);
-            this.label2.Text = "Category List";
+            this.label2.Size = new System.Drawing.Size(90, 24);
+            this.label2.Text = "Table List";
             // 
             // dataGridView1
             // 
@@ -59,12 +58,11 @@
             this.dgvName,
             this.dgvedit,
             this.dgvdel});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 149);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 124);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(693, 303);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.TabIndex = 5;
             // 
             // dgvSno
             // 
@@ -113,14 +111,15 @@
             this.dgvdel.ReadOnly = true;
             this.dgvdel.Width = 50;
             // 
-            // frmcategoryview
+            // frmTable
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(741, 464);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(744, 439);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "frmcategoryview";
-            this.Text = "frmcategoryview";
-            this.Load += new System.EventHandler(this.frmcategoryview_Load);
+            this.Name = "frmTable";
+            this.Text = "frmTable";
+            this.Load += new System.EventHandler(this.frmTable_Load);
             this.Controls.SetChildIndex(this.txtsearch, 0);
             this.Controls.SetChildIndex(this.btnadd, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -133,12 +132,12 @@
         }
 
         #endregion
+
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvName;
         private System.Windows.Forms.DataGridViewImageColumn dgvedit;
         private System.Windows.Forms.DataGridViewImageColumn dgvdel;
-        private System.Windows.Forms.ColorDialog colorDialog1;
-        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

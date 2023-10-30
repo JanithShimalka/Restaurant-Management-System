@@ -76,6 +76,8 @@ namespace Resturent_Management_System
         }
 
         public static void LoadData(string qry, DataGridView gv, ListBox lb) {
+
+            //gv.CellFormatting += new DataGridViewCellFormattingEventHandler(gv_cellformatting);
             /*
             try
             {
@@ -101,5 +103,6 @@ namespace Resturent_Management_System
 
             */
         }
+        
     }
 }

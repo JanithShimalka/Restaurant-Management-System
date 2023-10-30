@@ -144,6 +144,7 @@
             this.btntables.TabIndex = 7;
             this.btntables.Text = "Tables";
             this.btntables.UseVisualStyleBackColor = false;
+            this.btntables.Click += new System.EventHandler(this.btntables_Click);
             // 
             // btnproduct
             // 
