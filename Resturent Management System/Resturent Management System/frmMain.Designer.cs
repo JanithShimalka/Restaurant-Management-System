@@ -114,6 +114,7 @@
             this.btnposs.TabIndex = 9;
             this.btnposs.Text = "POS";
             this.btnposs.UseVisualStyleBackColor = false;
+            this.btnposs.Click += new System.EventHandler(this.btnposs_Click);
             // 
             // btnstaff
             // 

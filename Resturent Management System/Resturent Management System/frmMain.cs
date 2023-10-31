@@ -1,4 +1,5 @@
-﻿using Resturent_Management_System.View;
+﻿using Resturent_Management_System.Model;
+using Resturent_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,6 +73,12 @@ namespace Resturent_Management_System
         private void btnproduct_Click(object sender, EventArgs e)
         {
             Addcontrols(new frmProductView());
+        }
+
+        private void btnposs_Click(object sender, EventArgs e)
+        {
+            frmPOS frm = new frmPOS();
+            frm.Show();
         }
     }
 }

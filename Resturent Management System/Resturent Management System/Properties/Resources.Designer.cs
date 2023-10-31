@@ -123,6 +123,16 @@ namespace Resturent_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap food1 {
+            get {
+                object obj = ResourceManager.GetObject("food1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximize_icon {
             get {
                 object obj = ResourceManager.GetObject("maximize icon", resourceCulture);
@@ -156,6 +166,16 @@ namespace Resturent_Management_System.Properties {
         internal static System.Drawing.Bitmap product2 {
             get {
                 object obj = ResourceManager.GetObject("product2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pwr {
+            get {
+                object obj = ResourceManager.GetObject("pwr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
