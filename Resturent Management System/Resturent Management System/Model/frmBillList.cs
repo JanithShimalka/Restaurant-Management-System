@@ -54,7 +54,12 @@ namespace Resturent_Management_System.Model
                 this.Close();
 
             }
-           
+            if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvdel") {
+
+
+            }
+
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
