@@ -47,15 +47,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.productPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtsearch = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ucProduct1 = new Resturent_Management_System.Model.ucProduct();
-            this.ucProduct2 = new Resturent_Management_System.Model.ucProduct();
-            this.ucProduct3 = new Resturent_Management_System.Model.ucProduct();
-            this.ucProduct4 = new Resturent_Management_System.Model.ucProduct();
-            this.ucProduct5 = new Resturent_Management_System.Model.ucProduct();
             this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +54,16 @@
             this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.btncheckout = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucProduct1 = new Resturent_Management_System.Model.ucProduct();
+            this.ucProduct2 = new Resturent_Management_System.Model.ucProduct();
+            this.ucProduct3 = new Resturent_Management_System.Model.ucProduct();
+            this.ucProduct4 = new Resturent_Management_System.Model.ucProduct();
+            this.ucProduct5 = new Resturent_Management_System.Model.ucProduct();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.categorypanel.SuspendLayout();
@@ -178,6 +179,7 @@
             this.btnbill.TabIndex = 4;
             this.btnbill.Text = "Bill List";
             this.btnbill.UseVisualStyleBackColor = false;
+            this.btnbill.Click += new System.EventHandler(this.btnbill_Click);
             // 
             // btndelivery
             // 
@@ -238,6 +240,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.Controls.Add(this.btncheckout);
             this.panel2.Controls.Add(this.lbltot);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -334,6 +337,67 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
+            // dgvSno
+            // 
+            this.dgvSno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSno.FillWeight = 70F;
+            this.dgvSno.HeaderText = "Sr#";
+            this.dgvSno.MinimumWidth = 40;
+            this.dgvSno.Name = "dgvSno";
+            this.dgvSno.ReadOnly = true;
+            this.dgvSno.Width = 40;
+            // 
+            // dgvid
+            // 
+            this.dgvid.HeaderText = "id";
+            this.dgvid.Name = "dgvid";
+            this.dgvid.ReadOnly = true;
+            this.dgvid.Visible = false;
+            // 
+            // proID
+            // 
+            this.proID.HeaderText = "ProductID";
+            this.proID.Name = "proID";
+            this.proID.ReadOnly = true;
+            this.proID.Visible = false;
+            // 
+            // dgvName
+            // 
+            this.dgvName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvName.HeaderText = "Name";
+            this.dgvName.Name = "dgvName";
+            this.dgvName.ReadOnly = true;
+            // 
+            // dgvQty
+            // 
+            this.dgvQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvQty.FillWeight = 30F;
+            this.dgvQty.HeaderText = "QTY";
+            this.dgvQty.MinimumWidth = 30;
+            this.dgvQty.Name = "dgvQty";
+            this.dgvQty.ReadOnly = true;
+            this.dgvQty.Width = 30;
+            // 
+            // dgvPrice
+            // 
+            this.dgvPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvPrice.FillWeight = 50F;
+            this.dgvPrice.HeaderText = "Price";
+            this.dgvPrice.MinimumWidth = 50;
+            this.dgvPrice.Name = "dgvPrice";
+            this.dgvPrice.ReadOnly = true;
+            this.dgvPrice.Width = 50;
+            // 
+            // dgvAmount
+            // 
+            this.dgvAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvAmount.FillWeight = 50F;
+            this.dgvAmount.HeaderText = "Amount";
+            this.dgvAmount.MinimumWidth = 50;
+            this.dgvAmount.Name = "dgvAmount";
+            this.dgvAmount.ReadOnly = true;
+            this.dgvAmount.Width = 50;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -350,6 +414,20 @@
             this.txtsearch.Size = new System.Drawing.Size(221, 20);
             this.txtsearch.TabIndex = 13;
             this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+            // 
+            // btncheckout
+            // 
+            this.btncheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncheckout.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btncheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncheckout.Location = new System.Drawing.Point(589, 10);
+            this.btncheckout.Margin = new System.Windows.Forms.Padding(60, 15, 3, 3);
+            this.btncheckout.Name = "btncheckout";
+            this.btncheckout.Size = new System.Drawing.Size(138, 39);
+            this.btncheckout.TabIndex = 4;
+            this.btncheckout.Text = "Checkout";
+            this.btncheckout.UseVisualStyleBackColor = false;
+            this.btncheckout.Click += new System.EventHandler(this.btncheckout_Click);
             // 
             // pictureBox2
             // 
@@ -435,67 +513,6 @@
             this.ucProduct5.Size = new System.Drawing.Size(119, 155);
             this.ucProduct5.TabIndex = 4;
             // 
-            // dgvSno
-            // 
-            this.dgvSno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSno.FillWeight = 70F;
-            this.dgvSno.HeaderText = "Sr#";
-            this.dgvSno.MinimumWidth = 40;
-            this.dgvSno.Name = "dgvSno";
-            this.dgvSno.ReadOnly = true;
-            this.dgvSno.Width = 40;
-            // 
-            // dgvid
-            // 
-            this.dgvid.HeaderText = "id";
-            this.dgvid.Name = "dgvid";
-            this.dgvid.ReadOnly = true;
-            this.dgvid.Visible = false;
-            // 
-            // proID
-            // 
-            this.proID.HeaderText = "ProductID";
-            this.proID.Name = "proID";
-            this.proID.ReadOnly = true;
-            this.proID.Visible = false;
-            // 
-            // dgvName
-            // 
-            this.dgvName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvName.HeaderText = "Name";
-            this.dgvName.Name = "dgvName";
-            this.dgvName.ReadOnly = true;
-            // 
-            // dgvQty
-            // 
-            this.dgvQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvQty.FillWeight = 30F;
-            this.dgvQty.HeaderText = "QTY";
-            this.dgvQty.MinimumWidth = 30;
-            this.dgvQty.Name = "dgvQty";
-            this.dgvQty.ReadOnly = true;
-            this.dgvQty.Width = 30;
-            // 
-            // dgvPrice
-            // 
-            this.dgvPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvPrice.FillWeight = 50F;
-            this.dgvPrice.HeaderText = "Price";
-            this.dgvPrice.MinimumWidth = 50;
-            this.dgvPrice.Name = "dgvPrice";
-            this.dgvPrice.ReadOnly = true;
-            this.dgvPrice.Width = 50;
-            // 
-            // dgvAmount
-            // 
-            this.dgvAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvAmount.FillWeight = 50F;
-            this.dgvAmount.HeaderText = "Amount";
-            this.dgvAmount.MinimumWidth = 50;
-            this.dgvAmount.Name = "dgvAmount";
-            this.dgvAmount.ReadOnly = true;
-            this.dgvAmount.Width = 50;
-            // 
             // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -562,5 +579,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
+        public System.Windows.Forms.Button btncheckout;
     }
 }

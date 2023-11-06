@@ -66,11 +66,23 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="mainclass.cs" />
+    <Compile Include="Model\frmBillList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmBillList.Designer.cs">
+      <DependentUpon>frmBillList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\frmCategoryAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\frmCategoryAdd.Designer.cs">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmCheckout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmCheckout.Designer.cs">
+      <DependentUpon>frmCheckout.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\frmPOS.cs">
       <SubType>Form</SubType>
@@ -167,8 +179,14 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmBillList.resx">
+      <DependentUpon>frmBillList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\frmCategoryAdd.resx">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmCheckout.resx">
+      <DependentUpon>frmCheckout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
@@ -276,6 +294,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pwr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
