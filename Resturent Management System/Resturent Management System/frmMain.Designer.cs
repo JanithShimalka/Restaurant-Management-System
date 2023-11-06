@@ -84,6 +84,7 @@
             this.btnkitchen.TabIndex = 11;
             this.btnkitchen.Text = "Kitchen";
             this.btnkitchen.UseVisualStyleBackColor = false;
+            this.btnkitchen.Click += new System.EventHandler(this.btnkitchen_Click);
             // 
             // btnsettings
             // 

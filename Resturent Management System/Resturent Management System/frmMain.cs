@@ -80,5 +80,10 @@ namespace Resturent_Management_System
             frmPOS frm = new frmPOS();
             frm.Show();
         }
+
+        private void btnkitchen_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmKitchenView());
+        }
     }
 }
