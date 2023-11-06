@@ -20,7 +20,7 @@ namespace Resturent_Management_System.Model
             InitializeComponent();
         }
         public int mainId = 0;
-        public string orderType;
+        public string orderType ="";
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -341,6 +341,7 @@ namespace Resturent_Management_System.Model
 
             if (frm.mainID > 0) {
                 id = frm.mainID;
+                mainId = frm.mainID;
                 LoadEntries();
             }
         }
@@ -407,6 +408,100 @@ namespace Resturent_Management_System.Model
             lbltable.Visible = false;
             lblwaiter.Visible = false;
             lbltot.Text = "0.00";
+        }
+
+        private void btnhold_Click(object sender, EventArgs e)
+        {
+            string qry1 = "";
+            string qry2 = "";
+            int detailID = 0;
+
+            if (orderType == "") {
+                MessageBox.Show("Please Select Order Type");
+                return;
+            }
+
+            if (mainId == 0)
+            {
+                qry1 = @"insert into tblMain values(@aDate,@aTime,@tableName,@waiterName,@status,@orderType,@total,@received,@change); Select SCOPE_IDENTITY()";
+
+            }
+            else
+            {
+                qry2 = @"update tblMain set status = @status, total = @total, received = @received, change =  @change where mainID = @ID";
+
+            }
+
+            //Hashtable ht = new Hashtable();
+            /*
+            SqlCommand cmd = new SqlCommand(qry1,mainclass.con);
+            cmd.Parameters.AddWithValue("@ID",mainId);
+            cmd.Parameters.AddWithValue("@aDate",Convert.ToDateTime(DateTime.Now.Date));
+            cmd.Parameters.AddWithValue("@aTime",DateTime.Now.ToShortTimeString());
+            cmd.Parameters.AddWithValue("@tableName",lbltable.Text);
+            cmd.Parameters.AddWithValue("@waiterName",lblwaiter.Text);
+            cmd.Parameters.AddWithValue("@status","Hold");
+            cmd.Parameters.AddWithValue("@orderType",orderType);
+            cmd.Parameters.AddWithValue("@total",Convert.ToDouble(lbltot.Text));
+            cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+
+            if (mainclass.con.State == ConnectionState.Closed) {
+                mainclass.con.Open();
+            }
+            if (mainId == 0)
+            {
+                mainId = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            else {
+                cmd.ExecuteNonQuery();
+            }
+            if (mainclass.con.State == ConnectionState.Open)
+            {
+                mainclass.con.Close();
+            }
+
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                detailID = Convert.ToInt32(row.Cells["dgvid"].Value);
+                if(detailID == 0)
+                {
+                    qry2 = @"insert into tblDetails values(@mainId,@proID,@qty,@price,@amount)";
+                }else
+                {
+                    qry2 = @"Update tblDetails set proID = @proID, qty = @qty, price = @price, amount = @amount Where DetailID = @ID";
+                }
+
+                SqlCommand cmd2 = new SqlCommand(qry2, mainclass.con);
+                cmd2.Parameters.AddWithValue("@ID", detailID);
+                cmd2.Parameters.AddWithValue("@mainID", mainId);
+                cmd2.Parameters.AddWithValue("@proID",Convert.ToInt32( row.Cells["proID"].Value));
+                cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
+                cmd2.Parameters.AddWithValue("@price", Convert.ToDouble(row.Cells["dgvPrice"].Value));
+                cmd2.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["dgvAmount"].Value));
+
+                if (mainclass.con.State == ConnectionState.Closed)
+                {
+                    mainclass.con.Open();
+                }
+                cmd2.ExecuteNonQuery();
+                if (mainclass.con.State == ConnectionState.Open)
+                {
+                    mainclass.con.Close();
+                }
+
+                MessageBox.Show("Saved Successfully");
+                mainId = 0;
+                detailID = 0;
+                dataGridView1.Rows.Clear();
+                lbltable.Text = "";
+                lblwaiter.Text = "";
+                lbltable.Visible = false;
+                lblwaiter.Visible = false;
+                lbltot.Text = "0.00";
+
+            }
+            */
         }
     }
 }

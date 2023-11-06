@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbltable = new System.Windows.Forms.Label();
             this.lblwaiter = new System.Windows.Forms.Label();
             this.btndin = new System.Windows.Forms.Button();
@@ -40,12 +41,19 @@
             this.btnhold = new System.Windows.Forms.Button();
             this.btnnew = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btncheckout = new System.Windows.Forms.Button();
             this.lbltot = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.categorypanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.productPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.ucProduct1 = new Resturent_Management_System.Model.ucProduct();
+            this.ucProduct2 = new Resturent_Management_System.Model.ucProduct();
+            this.ucProduct3 = new Resturent_Management_System.Model.ucProduct();
+            this.ucProduct4 = new Resturent_Management_System.Model.ucProduct();
+            this.ucProduct5 = new Resturent_Management_System.Model.ucProduct();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,21 +64,13 @@
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.txtsearch = new System.Windows.Forms.TextBox();
-            this.btncheckout = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ucProduct1 = new Resturent_Management_System.Model.ucProduct();
-            this.ucProduct2 = new Resturent_Management_System.Model.ucProduct();
-            this.ucProduct3 = new Resturent_Management_System.Model.ucProduct();
-            this.ucProduct4 = new Resturent_Management_System.Model.ucProduct();
-            this.ucProduct5 = new Resturent_Management_System.Model.ucProduct();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.categorypanel.SuspendLayout();
             this.productPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +93,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(969, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Resturent_Management_System.Properties.Resources.pwr;
+            this.pictureBox2.Location = new System.Drawing.Point(910, 22);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(47, 45);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // lbltable
             // 
@@ -209,6 +222,7 @@
             this.btnhold.TabIndex = 3;
             this.btnhold.Text = "Hold";
             this.btnhold.UseVisualStyleBackColor = false;
+            this.btnhold.Click += new System.EventHandler(this.btnhold_Click);
             // 
             // btnnew
             // 
@@ -237,6 +251,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "POS";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Resturent_Management_System.Properties.Resources.food1;
+            this.pictureBox1.Location = new System.Drawing.Point(22, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -248,6 +273,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(969, 52);
             this.panel2.TabIndex = 1;
+            // 
+            // btncheckout
+            // 
+            this.btncheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncheckout.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btncheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncheckout.Location = new System.Drawing.Point(589, 10);
+            this.btncheckout.Margin = new System.Windows.Forms.Padding(60, 15, 3, 3);
+            this.btncheckout.Name = "btncheckout";
+            this.btncheckout.Size = new System.Drawing.Size(138, 39);
+            this.btncheckout.TabIndex = 4;
+            this.btncheckout.Text = "Checkout";
+            this.btncheckout.UseVisualStyleBackColor = false;
+            this.btncheckout.Click += new System.EventHandler(this.btncheckout_Click);
             // 
             // lbltot
             // 
@@ -311,6 +350,66 @@
             this.productPanel.Name = "productPanel";
             this.productPanel.Size = new System.Drawing.Size(504, 327);
             this.productPanel.TabIndex = 11;
+            // 
+            // ucProduct1
+            // 
+            this.ucProduct1.id = 0;
+            this.ucProduct1.Location = new System.Drawing.Point(3, 3);
+            this.ucProduct1.Name = "ucProduct1";
+            this.ucProduct1.pCategory = null;
+            this.ucProduct1.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct1.pImage")));
+            this.ucProduct1.pName = "Product Name";
+            this.ucProduct1.pPrice = null;
+            this.ucProduct1.Size = new System.Drawing.Size(119, 155);
+            this.ucProduct1.TabIndex = 0;
+            // 
+            // ucProduct2
+            // 
+            this.ucProduct2.id = 0;
+            this.ucProduct2.Location = new System.Drawing.Point(128, 3);
+            this.ucProduct2.Name = "ucProduct2";
+            this.ucProduct2.pCategory = null;
+            this.ucProduct2.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct2.pImage")));
+            this.ucProduct2.pName = "Product Name";
+            this.ucProduct2.pPrice = null;
+            this.ucProduct2.Size = new System.Drawing.Size(119, 155);
+            this.ucProduct2.TabIndex = 1;
+            // 
+            // ucProduct3
+            // 
+            this.ucProduct3.id = 0;
+            this.ucProduct3.Location = new System.Drawing.Point(253, 3);
+            this.ucProduct3.Name = "ucProduct3";
+            this.ucProduct3.pCategory = null;
+            this.ucProduct3.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.pImage")));
+            this.ucProduct3.pName = "Product Name";
+            this.ucProduct3.pPrice = null;
+            this.ucProduct3.Size = new System.Drawing.Size(119, 155);
+            this.ucProduct3.TabIndex = 2;
+            // 
+            // ucProduct4
+            // 
+            this.ucProduct4.id = 0;
+            this.ucProduct4.Location = new System.Drawing.Point(378, 3);
+            this.ucProduct4.Name = "ucProduct4";
+            this.ucProduct4.pCategory = null;
+            this.ucProduct4.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct4.pImage")));
+            this.ucProduct4.pName = "Product Name";
+            this.ucProduct4.pPrice = null;
+            this.ucProduct4.Size = new System.Drawing.Size(119, 155);
+            this.ucProduct4.TabIndex = 3;
+            // 
+            // ucProduct5
+            // 
+            this.ucProduct5.id = 0;
+            this.ucProduct5.Location = new System.Drawing.Point(3, 164);
+            this.ucProduct5.Name = "ucProduct5";
+            this.ucProduct5.pCategory = null;
+            this.ucProduct5.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct5.pImage")));
+            this.ucProduct5.pName = "Product Name";
+            this.ucProduct5.pPrice = null;
+            this.ucProduct5.Size = new System.Drawing.Size(119, 155);
+            this.ucProduct5.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -415,104 +514,6 @@
             this.txtsearch.TabIndex = 13;
             this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
-            // btncheckout
-            // 
-            this.btncheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncheckout.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btncheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncheckout.Location = new System.Drawing.Point(589, 10);
-            this.btncheckout.Margin = new System.Windows.Forms.Padding(60, 15, 3, 3);
-            this.btncheckout.Name = "btncheckout";
-            this.btncheckout.Size = new System.Drawing.Size(138, 39);
-            this.btncheckout.TabIndex = 4;
-            this.btncheckout.Text = "Checkout";
-            this.btncheckout.UseVisualStyleBackColor = false;
-            this.btncheckout.Click += new System.EventHandler(this.btncheckout_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Resturent_Management_System.Properties.Resources.pwr;
-            this.pictureBox2.Location = new System.Drawing.Point(910, 22);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 45);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Resturent_Management_System.Properties.Resources.food1;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ucProduct1
-            // 
-            this.ucProduct1.id = 0;
-            this.ucProduct1.Location = new System.Drawing.Point(3, 3);
-            this.ucProduct1.Name = "ucProduct1";
-            this.ucProduct1.pCategory = null;
-            this.ucProduct1.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct1.pImage")));
-            this.ucProduct1.pName = "Product Name";
-            this.ucProduct1.pPrice = null;
-            this.ucProduct1.Size = new System.Drawing.Size(119, 155);
-            this.ucProduct1.TabIndex = 0;
-            // 
-            // ucProduct2
-            // 
-            this.ucProduct2.id = 0;
-            this.ucProduct2.Location = new System.Drawing.Point(128, 3);
-            this.ucProduct2.Name = "ucProduct2";
-            this.ucProduct2.pCategory = null;
-            this.ucProduct2.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct2.pImage")));
-            this.ucProduct2.pName = "Product Name";
-            this.ucProduct2.pPrice = null;
-            this.ucProduct2.Size = new System.Drawing.Size(119, 155);
-            this.ucProduct2.TabIndex = 1;
-            // 
-            // ucProduct3
-            // 
-            this.ucProduct3.id = 0;
-            this.ucProduct3.Location = new System.Drawing.Point(253, 3);
-            this.ucProduct3.Name = "ucProduct3";
-            this.ucProduct3.pCategory = null;
-            this.ucProduct3.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.pImage")));
-            this.ucProduct3.pName = "Product Name";
-            this.ucProduct3.pPrice = null;
-            this.ucProduct3.Size = new System.Drawing.Size(119, 155);
-            this.ucProduct3.TabIndex = 2;
-            // 
-            // ucProduct4
-            // 
-            this.ucProduct4.id = 0;
-            this.ucProduct4.Location = new System.Drawing.Point(378, 3);
-            this.ucProduct4.Name = "ucProduct4";
-            this.ucProduct4.pCategory = null;
-            this.ucProduct4.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct4.pImage")));
-            this.ucProduct4.pName = "Product Name";
-            this.ucProduct4.pPrice = null;
-            this.ucProduct4.Size = new System.Drawing.Size(119, 155);
-            this.ucProduct4.TabIndex = 3;
-            // 
-            // ucProduct5
-            // 
-            this.ucProduct5.id = 0;
-            this.ucProduct5.Location = new System.Drawing.Point(3, 164);
-            this.ucProduct5.Name = "ucProduct5";
-            this.ucProduct5.pCategory = null;
-            this.ucProduct5.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct5.pImage")));
-            this.ucProduct5.pName = "Product Name";
-            this.ucProduct5.pPrice = null;
-            this.ucProduct5.Size = new System.Drawing.Size(119, 155);
-            this.ucProduct5.TabIndex = 4;
-            // 
             // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -531,13 +532,13 @@
             this.Load += new System.EventHandler(this.frmPOS_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.categorypanel.ResumeLayout(false);
             this.productPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
