@@ -21,6 +21,10 @@ namespace Resturent_Management_System.Model
         }
         public int mainId = 0;
         public string orderType ="";
+        public int driverID = 0;
+        public string customerName = "";
+        public string customerPhone = "";
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -173,6 +177,20 @@ namespace Resturent_Management_System.Model
             lblwaiter.Visible = false;
             orderType = "Delivery";
 
+            frmAddCustomer frm = new frmAddCustomer();
+            frm.mainID = mainId;
+            frm.orderType = orderType;
+            frm.ShowDialog();
+
+            if (frm.txtname.Text != "")
+            {
+                driverID = frm.driverID;
+                lbldrivername.Text = "Customer Name : " + frm.txtname.Text + ", Phone Number : " + frm.txtphone.Text + ", Driver : " + frm.cbDriver.Text;
+                lbldrivername.Visible = true;
+                customerName = frm.txtname.Text;
+                customerPhone = frm.txtphone.Text;
+            }
+
         }
 
         private void btntake_Click(object sender, EventArgs e)
@@ -182,11 +200,26 @@ namespace Resturent_Management_System.Model
             lbltable.Visible = false;
             lblwaiter.Visible = false;
             orderType = "Take Away";
+
+            frmAddCustomer frm = new frmAddCustomer();
+            frm.mainID = mainId;
+            frm.orderType = orderType;
+            frm.ShowDialog();
+
+            if(frm.txtname.Text != "")
+            {
+                driverID = frm.driverID;
+                lbldrivername.Text = "Customer Name : "+ frm.txtname.Text +", Phone Number : "+ frm.txtphone.Text ;
+                lbldrivername.Visible = true;
+                customerName = frm.txtname.Text;
+                customerPhone = frm.txtphone.Text;
+            }
         }
 
         private void btndin_Click(object sender, EventArgs e)
         {
             orderType = "Din In";
+            lbldrivername.Visible = false;
             frmTableSelect frm = new frmTableSelect();
             frm.Show();
             if (frm.tableName != "")
@@ -248,7 +281,9 @@ namespace Resturent_Management_System.Model
 
             if (mainId == 0)
             {
-                qry1 = @"insert into tblMain values(@aDate,@aTime,@tableName,@waiterName,@status,@orderType,@total,@received,@change); Select SCOPE_IDENTITY()";
+                qry1 = @"insert into tblMain values(@aDate,@aTime,@tableName,@waiterName,@status,@orderType,@total,@received,@change,@driverID,@custName,@custPhone); Select SCOPE_IDENTITY()";
+                // @driverID,@custName,@custPhone added in 'Add Customer' Step
+                //උබ මුලින් බලාගෙන යද්දි ඔය උඩ 3 ඇඩ් කරල නැතිව ඇති, ඒව පස්සෙ ඇඩ් වෙන්නෙ ඈ
 
             }
             else {
@@ -269,6 +304,10 @@ namespace Resturent_Management_System.Model
             cmd.Parameters.AddWithValue("@total",Convert.ToDouble(lbltot.Text));
             cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
             cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+
+            cmd.Parameters.AddWithValue("@driverID", driverID);
+            cmd.Parameters.AddWithValue("@custName", customerName);
+            cmd.Parameters.AddWithValue("@custPhone", customerPhone);
 
             if (mainclass.con.State == ConnectionState.Closed) {
                 mainclass.con.Open();
@@ -323,6 +362,7 @@ namespace Resturent_Management_System.Model
                 lbltable.Visible = false;
                 lblwaiter.Visible = false;
                 lbltot.Text = "0.00";
+                lbldrivername.Text = "";
 
             }
             */
@@ -423,8 +463,9 @@ namespace Resturent_Management_System.Model
 
             if (mainId == 0)
             {
-                qry1 = @"insert into tblMain values(@aDate,@aTime,@tableName,@waiterName,@status,@orderType,@total,@received,@change); Select SCOPE_IDENTITY()";
-
+                qry1 = @"insert into tblMain values(@aDate,@aTime,@tableName,@waiterName,@status,@orderType,@total,@received,@change,@driverID,@custName,@custPhone); Select SCOPE_IDENTITY()";
+                // @driverID,@custName,@custPhone added in 'Add Customer' Step
+                //උබ මුලින් බලාගෙන යද්දි ඔය උඩ 3 ඇඩ් කරල නැතිව ඇති, ඒව පස්සෙ ඇඩ් වෙන්නෙ ඈ
             }
             else
             {
@@ -445,6 +486,10 @@ namespace Resturent_Management_System.Model
             cmd.Parameters.AddWithValue("@total",Convert.ToDouble(lbltot.Text));
             cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
             cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+
+            cmd.Parameters.AddWithValue("@driverID", driverID);
+            cmd.Parameters.AddWithValue("@custName", customerName);
+            cmd.Parameters.AddWithValue("@custPhone", customerPhone);
 
             if (mainclass.con.State == ConnectionState.Closed) {
                 mainclass.con.Open();
@@ -499,9 +544,11 @@ namespace Resturent_Management_System.Model
                 lbltable.Visible = false;
                 lblwaiter.Visible = false;
                 lbltot.Text = "0.00";
+                lbldrivername.Text = "";
 
             }
             */
+
         }
     }
 }

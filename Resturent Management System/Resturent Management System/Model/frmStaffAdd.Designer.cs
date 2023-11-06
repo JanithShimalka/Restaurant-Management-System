@@ -104,6 +104,7 @@
             "Waiter",
             "Cleaning",
             "Manager",
+            "Driver",
             "Other"});
             this.comboBox1.Location = new System.Drawing.Point(70, 279);
             this.comboBox1.Name = "comboBox1";
